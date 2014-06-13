@@ -30,19 +30,19 @@ namespace Checkpoints
 
     // What makes a good checkpoint block?
     // + Is surrounded by blocks with reasonable timestamps
-    //   (no blocks before with a timestamp after, none after with
-    //    timestamp before)
+    // (no blocks before with a timestamp after, none after with
+    // timestamp before)
     // + Contains no strange transactions
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        (      10, uint256("0x00000e468554b0d4a9f1f390ad43f511a7abf61c4b52253f373be898d88a9673"))
+        ( 10, uint256("0x00000e468554b0d4a9f1f390ad43f511a7abf61c4b52253f373be898d88a9673"))
         ;
     static const CCheckpointData data = {
         &mapCheckpoints,
         1401283054, // * UNIX timestamp of last checkpoint block
-        0,    // * total number of transactions between genesis and last checkpoint
-                    //   (the tx=... number in the SetBestChain debug.log lines)
-        800.0     // * estimated number of transactions per day after checkpoint
+        0, // * total number of transactions between genesis and last checkpoint
+                    // (the tx=... number in the SetBestChain debug.log lines)
+        800.0 // * estimated number of transactions per day after checkpoint
     };
 
     static MapCheckpoints mapCheckpointsTestnet = 
