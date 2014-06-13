@@ -1410,10 +1410,13 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             if (pindexLast->nHeight+1 >= 10) { DiffMode = 4; }
         }
         else {
-            if (pindexLast->nHeight+1 >= 86400) { DiffMode = 4; }
+            if (pindexLast->nHeight+1 >= 6950) { DiffMode = 4; }
             else if (pindexLast->nHeight+1 >= 60) { DiffMode = 3; }
             else if (pindexLast->nHeight+1 >= 30) { DiffMode = 2; }         
         }
+		
+		if (pindexLast->nHeight+1 == 6932)
+			return bnProofOfWorkLimit.GetCompact();
 
         if (DiffMode == 1) { return GetNextWorkRequired_V1(pindexLast, pblock); }
         else if (DiffMode == 2) { return GetNextWorkRequired_V2(pindexLast, pblock); }
